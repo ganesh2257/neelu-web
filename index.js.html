@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .header{
+            min-height: 100vh;
+            width: 100%;
+            background-image:linear-gradient(rgba(0,0,0,0.7),rgba(4,9,30,0.7)),url("/hari.jpg");
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        nav{
+            display: flex;
+            padding: 1% 3%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav img{
+            width: 150px;
+        }
+        .nav-links{
+             text-align: right;
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a{
+            color: rgb(240, 235, 235);
+            font-size: 30px;
+            font-weight: 900;
+            text-decoration: none;
+        }
+        .nav-links ul li::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: rgb(232, 224, 224);
+            display: block;
+            transition: 0.2s;
+        }
+        .nav-links ul li:hover::after{
+            width: 100%;
+        }
+        .text-box{
+            width: 90%;
+            position: absolute;
+            color: aliceblue;
+            top: 45%;
+            left: 5%;
+            text-align: center;
+        }
+        .text-box h1{
+            font-size: 60px;
+            color: rgb(192, 255, 229);
+        }
+        .text-box p{
+            font-size: 35px;
+            color: #fff;
+        }
+        button{
+            width: 43%;
+            height: 40px;
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 20px;
+            border: 1px solid #fff;
+            padding: 6px 10px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: rgb(0, 0, 1);
+            font-weight: 600;
+        }
+        button:hover{
+            background-color: #fff;
+            color: black;
+            border: 3px solid black;
+            font-weight: 600;
+        }
+        .hading1{
+            width: 90%;
+            text-align: center;
+            box-sizing: border-box;
+            margin: auto;
+        }
+        .hading1 h1{
+            font-size: 40px;
+            margin-top: 10px;
+        }
+        .hading1 p{
+            font-size: 25px;   
+            margin-top: 10px;
+        }
+        .row1{
+            display: flex;
+            justify-content: space-between;
+        }
+        .campous-col1{
+            flex-basis: 32%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        .imagebox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .campous-col1 img{
+            width: 100%;
+            height: 50vh;
+            display: block;
+            margin-right: 5px;
+            border-radius: 10px;
+        }
+        .layer1 p{
+            font-size: 25px;
+        }
+        .heading2{
+            width: 90%;
+            text-align: center;
+            margin: auto;
+        }
+        .heading2 h1{
+            font-size: 40px;
+            margin-top: 5px;
+        }
+        .heading2 p{
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .row2{
+            display: flex;
+            justify-content: space-between;
+        }
+        .campous-col2{
+            flex-basis: 32%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        .imagebox2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .campous-col2 img{
+            width: 100%;
+            display: block;
+            height: 50vh;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+        .heading3{
+            width: 90%;
+            text-align: center;
+            margin: auto;
+        }
+        .heading3 h1{
+            font-size: 40px;
+            margin-top: 10px;
+        }
+        .heading3 p{
+            font-size: 25px;
+        }
+        .row3{
+            display: flex;
+            justify-content: space-between;
+        }
+        .campous-col3{
+            flex-basis: 32%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        .imagebox3{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .campous-col3 img{
+            width: 100%;
+            height: 50vh;
+            display: block;
+            border-radius: 10px;
+        }
+    .heading4{
+        width: 90%;
+        text-align: center;
+        margin: auto;
+    }
+    .heading4 h1{
+        font-size: 40px;
+        margin-top: 10px;
+    }
+    .heading4 p{
+        font-size: 25px;
+    }
+    .row4{
+        display: flex;
+        justify-content: space-between;
+    }
+    .campous-col4{
+        flex-basis: 32%;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    .imagebox4{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .campous-col4 img{
+        width: 100%;
+        height: 50vh;
+        border-radius: 10px;
+        display: block;
+    }
+    .heading5{
+        width: 90%;
+        text-align: center;
+        margin: auto;
+    }
+    .heading5 h1{
+        font-size: 40px;
+        margin-top: 10px;
+    }
+    .heading5 p{
+        font-size: 25px;
+    }
+    .row5{
+        display: flex;
+        justify-content: space-between;
+    }
+    .campous-col5{
+        flex-basis: 32%;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+    .campous-col5 img{
+        width: 100%;
+        height: 50vh;
+        border-radius: 10px;
+        display: block;
+    }
+
+    .student{
+            width: 95%;
+            margin: auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .student h1{
+            font-size: 42px;
+            margin-top: 15px;
+            line-height: 70px;
+        }
+        .student p{
+            font-size: 30px;
+            margin-top: -30px;
+            line-height: 20px;
+            margin-bottom: 60px;
+        }
+        .row4{
+            display: flex;
+            justify-content: space-between;
+        }
+        .campus-col4{
+            flex-basis: 32%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            align-items: center;
+        }
+        .imagebox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .campus-col4 img{
+            width: 80%;
+            height: 30vh;
+            display: block;
+            border-radius: 400px;
+            border: 5px solid black;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        .layer h1{
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        .layer p{
+            font-size: 20px;
+        }
+        .precident{
+            text-align: center;
+        } 
+        
+        nav a:hover {
+  
+  border-bottom: 2px solid #000;
+  padding: 6px 0; 
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+.footer-section {
+  background: #dfe6e9;
+  position: relative;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+.single-cta i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+    max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+      color: #7e7e7e;
+  line-height: 28px;
+}
+.footer-social-icon span {
+  color: #000;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+.footer-social-icon a {
+  color: #000;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+.facebook-bg{
+  background: #3B5998;
+}
+.twitter-bg{
+  background: #55ACEE;
+}
+.google-bg{
+  background: #DD4B39;
+}
+.footer-widget-heading h3 {
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #ff5e14;
+}
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+  color: #ff5e14;
+}
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: #fff;
+}
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #ff5e14;
+    padding: 13px 20px;
+    border: 1px solid #ff5e14;
+    top: 0;
+}
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+.copyright-area{
+  background: #202020;
+  padding: 25px 0;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.copyright-text p a{
+  color: #ff5e14;
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a{
+  color: #ff5e14;
+}
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+}
+    </style>
+</head>
+<body>
+
+    
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./neeluLogo.png" style="height: 70px;width: 120px;"/>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="#" style="color: #000;">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"style="color: #000;">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color: #000;">SERVICE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color: #000;">BLOG</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color: #000;">CONTACT US</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="tel:9876765678" style="color: #000;"><button type="button" class="btn btn-success" style="width: 150px;">CALL</button></a>
+              </li>
+              
+            </ul>
+          </div>
+          </div>
+        </div>
+      </nav>
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://thumbs.dreamstime.com/b/house-under-construction-blueprints-building-project-53360048.jpg" class="d-block w-100 h-20" alt="..." style="height:100%;">
+            <div class="carousel-caption d-none d-md-block">
+                <h1 style="color: black;">LETS CREATE DREEM HOME WITH VASUNDHARA CONSTRUCTION</h1>
+                <p style="color: black;">lets create our dreem home with vasundhara construction</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://nglcrealtech.com/wp-content/uploads/2022/04/turnkey-const.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h1 style="color: black;">LETS CREATE DREEM HOME WITH VASUNDHARA CONSTRUCTION</h1>
+                <p style="color: black;">lets create our dreem home with vasundhara construction</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.procore.com/library/wp-content/uploads/2023/05/Different-Types-of-Construction.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h1 style="color: black;">LETS CREATE DREEM HOME WITH VASUNDHARA CONSTRUCTION</h1>
+                <p style="color: black;">lets create our dreem home with vasundhara construction</p>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+   
+    <!-- <section class="header img-fluid">
+    </section> -->
+
+    <div class="container"  style="margin-top: 50px;">
+        <h1 style="text-align: center;">MEETING HALL</h1>
+        <p style="text-align: center;">A meeting room is a space usually set aside for people to get together</p>
+        <div class="container overflow-hidden text-center">
+            <div class="row ">
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col1">
+                    <div class="imagebox">
+                        <img src="https://media-cdn.tripadvisor.com/media/photo-s/02/4c/63/01/hall-main-entrance.jpg">
+                    </div>
+                    <div class="layer1">
+                        <p>best meeting hall</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col1">
+                    <div class="imagebox">
+                        <img src="/3hall.jgp.jpg">
+                    </div>
+                    <div class="layer1">
+                        <p>hall design</p>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col1">
+                    <div class="imagebox">
+                        <img src="/5hall.image.png">
+                    </div>
+                    <div class="layer1">
+                        <p>best modulesh of neelu</p>
+                    </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+      </div>
+
+
+      <div class="container"  style="margin-top: 50px;">
+        <h1 style="text-align: center;">MODULE KITCHINE</h1>
+        <P style="text-align: center;">Modular kitchens are kitchens that can be assembled using individual units</P>
+        <div class="container overflow-hidden text-center">
+            <div class="row ">
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col2">
+                    <div class="imagebox2">
+                        <img src="/3modular-kitchen.image.jpg">
+                    </div>
+                    <div class="layer">
+                        <p>kitchin 1</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col2">
+                    <div class="imagebox2">
+                        <img src="/2module kitchin.image.jpg">
+                    </div>
+                    <div class="layer2">
+                        <p>kitchin 2</p>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col2">
+                    <div class="imagebox2">
+                        <img src="/3modular-kitchen.image.jpg">
+                    </div>
+                    <div class="layer2">
+                        <p>kitchin </p>
+                    </div>
+                </div>
+             
+            </div>
+          </div>
+      </div>
+
+
+      <div class="container"  style="margin-top: 50px;">
+        <h1 style="text-align: center;">LUXARY BATHROOM</h1>
+        <P style="text-align: center;">Space is almost a synonym to a luxurious bathroom.The larger<br> and more spacious the bathroom the more luxurious it feels.</P>
+        <div class="container overflow-hidden text-center">
+            <div class="row ">
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col3">
+                    <div class="imagebox3">
+                        <img src="/2bathroom.image.jpg">
+                    </div>
+                    <div class="layer3">
+                        <p>bathroom1</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col3">
+                    <div class="imagebox3">
+                        <img src="https://cdn.pixabay.com/photo/2016/10/13/09/08/travel-1737171_1280.jpg">
+                    </div>
+                    <div class="layer3">
+                        <p>bathroom2</p>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col3">
+                    <div class="imagebox3">
+                        <img src="/3bathroom.image.jpg">
+                    </div>
+                    <div class="layer3">
+                        <p>bathroom3</p>
+                    </div>
+                </div>
+             
+            </div>
+          </div>
+      </div>
+
+
+      <div class="container"  style="margin-top: 50px;">
+        <h1 style="text-align: center;">SWIMING POOL</h1>
+        <P style="text-align: center;">DDF DF DF  NFKDNF KND KFRK KRFJ KFRSR KFKDR</P>
+        <div class="container overflow-hidden text-center">
+            <div class="row ">
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col4">
+                    <div class="imagebox4">
+                        <img src="data:image/jpeg;base64,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">
+                    </div>
+                    <div class="layer4">
+                        <p>swiming pool 1</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col4">
+                    <div class="imagebox4">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTnstb3hdi3Sw_jy9SRNq9jlBobXNHynCPxw&usqp=CAU">
+                    </div>
+                    <div class="layer4">
+                        <p>swiming pool 2</p>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col4">
+                    <dov class="imagebox4">
+                        <img src="/3swimingpool.image.jpg">
+                    </dov>
+                    <div class="layer4">
+                        <p>swiming 4</p>
+                    </div>
+                </div>
+             
+            </div>
+          </div>
+      </div>
+
+
+      <div class="container"  style="margin-top: 50px;">
+        <h1 style="text-align: center;"> INDORE GARDEN</h1>
+        <P style="text-align: center;">garden is very beutufull part in our home provideing better healt</P>
+        <div class="container overflow-hidden text-center">
+            <div class="row ">
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col5">
+                    <div class="imagebox5">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrTxLsemcBF55f40NyLlnCeIGQzIOKOVqHJw&usqp=CAU">
+                    </div>
+                    <div class="layer5">
+                        <p>swiming pool</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col5">
+                    <div class="imagebox5">
+                        <img src="/2garden.image.jpg">
+                    </div>
+                    <div class="layer5">
+                        <p>swiming pool 2</p>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col5">
+                    <div class="imagebox5">
+                        <img src="/3garden.image.jpg">
+                    </div>
+                    <div class="layer5">
+                        <p>swiming pool 5</p>
+                    </div>
+                </div>
+             
+            </div>
+          </div>
+      </div>
+
+
+     
+      
+      <div class="container"  style="margin-top: 50px;">
+        <h1 style="text-align: center;">TESTIMONIALS </h1>
+        <P style="text-align: center; font-size: 40px;">Happy customer</P>
+        <div class="container overflow-hidden text-center">
+            <div class="row ">
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col5">
+                    <div class="imagebox5">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+                    </div>
+                    <div class="layer5">
+                        <p>swiming pool</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col5">
+                    <div class="imagebox5">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+                    </div>
+                    <div class="layer5">
+                        <p>swiming pool 2</p>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-sm">
+                <!-- col conten -->
+                <div class="campous-col5">
+                    <div class="imagebox5">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+                    </div>
+                    <div class="layer5">
+                        <p>swiming pool 5</p>
+                    </div>
+                </div>
+             
+            </div>
+          </div>
+      </div>
+    
+
+    </div>
+   </div>
+   </div>
+
+   </div>
+   </div>
+   <footer class="footer-section">
+    <div class="container-fluid">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="cta-text">
+                            <h4>Office Adderss</h4>
+                            <span>In front of shakti shamil taal<BR>
+                                 shubash nagar sagar (MP)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-phone"></i>
+                        <div class="cta-text">
+                            <h4>Call us</h4>
+                            <span>9522509350</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="far fa-envelope-open"></i>
+                        <div class="cta-text">
+                            <h4>Mail us</h4>
+                            <span>Neeleshdutt@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+                            <a href="index.html"><img src="/neeluLogo.png" class="img-fluid" alt="logo"></a>
+                        </div>
+                        <div class="footer-text">
+                            <p>Vasundhara construction is a most pupular <br>company in the world in work sagar madhay pradesh </p>
+                        </div>
+                        <div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                            <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">services</a></li>
+                        
+                            <li><a href="#">Contact</a></li>
+                            
+
+                        
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Contact Us</h3>
+                        </div>
+                        <div class="footer-text mb-25">
+                            <p> please enter your phone number. our representative <br>
+                            will contact you soon</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="phone number">
+                                <!-- <button>SUBMIT</button> -->
+                            </form>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Design and Develop By Ganesh Mohoviya</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Policy</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+     
+
+       
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
